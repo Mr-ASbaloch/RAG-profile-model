@@ -6,14 +6,13 @@ import numpy as np
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings.huggingface import HuggingFaceEmbeddings  # ✅ correct import
 from groq import Groq
-
 
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")  # Replace manually if not set
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")  # 🔑 Replace manually if not set
 PDF_DRIVE_LINK = "https://drive.google.com/uc?id=1wQiWbNi0xI03A_TXGz_4-QimlUhYIZiN"
 PDF_FILE = "document.pdf"
 VECTOR_DB_PATH = "vector_store.pkl"
